@@ -25,9 +25,11 @@ public class SuperArray {
         //以下进行数组扩容
         if (currentIndex > elements.length - 1) {
             int[] temp = new int[elements.length + 1];
-            for (int i = 0; i < elements.length; i++) {
-                temp[i] = elements[i];
-            }
+            System.arraycopy(elements, 0, temp, 0, elements.length);
+
+//            for (int i = 0; i < elements.length; i++) {
+//                temp[i] = elements[i];
+//            }
             //改变引用
             elements = temp;
         }
