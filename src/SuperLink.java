@@ -9,36 +9,39 @@ public class SuperLink {
     // 对数据的增删改查
 
     // 增加一个元素，头插法
-    public void add(int data) {
-        if (head == null) {
-            head = new Node(data, null);
-        } else {
-            //创建一个指向头部的node
-            Node node = new Node(data, head);
-            //新的node变成head
-            head = node;
-        }
-        currentIndex++;
+    public void addToHeader(int data) {
+        this.add(0, data);
+    }
+
+    // 增加一个元素，头插法
+    public void addToTail(int data) {
+        this.add(currentIndex + 1, data);
     }
 
 
-    // 指定位置增加一个元素，尾插法
-    public void add(int index,int data) {
-        if(head == null){
-            add(data);
-        }else{
-            //先拉住后面的节点，再让前面的拉上自己。
-            //找到下标为index -1的节点
-            Node node = head;
-            for (int i = 0; i < index -1; i++) {
-                node = node.getNext();
+    // 指定位置增加一个元素
+    public void add(int index, int data) {
+        if (head == null) {
+            head = new Node(data, null);
+        } else {
+            if (index == 0) {
+                // 创建一个指向头部的node
+                Node node = new Node(data, head);
+                //新的node变成head
+                head = node;
+            } else {
+                //先拉住后面的节点，再让前面的拉上自己。
+                //找到下标为index -1的节点
+                Node node = head;
+                for (int i = 0; i < index - 1; i++) {
+                    node = node.getNext();
+                }
+                //插入的核心
+                Node temp = new Node(data, node.getNext());
+                node.setNext(temp);
             }
-            //插入的核心
-            Node temp = new Node(data,node.getNext());
-            node.setNext(temp);
-            currentIndex++;
         }
-
+        currentIndex++;
     }
 
 
