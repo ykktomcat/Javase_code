@@ -11,7 +11,7 @@ public class Test3 {
         int num1 = 12;
         //num1.
         //自动拆装箱
-        Long  l =12L;
+        Long l = 12L;
         long l1 = new Long(12L);
 
 
@@ -31,10 +31,6 @@ public class Test3 {
         num11 = 128;
         num22 = 128;
         System.out.println(num11 == num22);
-
-
-
-
 
 
     }

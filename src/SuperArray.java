@@ -8,88 +8,97 @@ public class SuperArray {
 
 
     //使用构造器进行初始化
-    public SuperArray(){
+    public SuperArray() {
         //elements = new int[10];
         this(10);
     }
 
-    public SuperArray(int capacity){
+    public SuperArray(int capacity) {
         elements = new int[capacity];
     }
 
 
     //对数据的增删改查
     //增加一个元素,尾插
-    public void add(int data){
+    public void add(int data) {
         currentIndex++;
         //以下进行数组扩容
-        if (currentIndex > elements.length - 1){
+        if (currentIndex > elements.length - 1) {
             int[] temp = new int[elements.length + 1];
             for (int i = 0; i < elements.length; i++) {
-                temp[i] =elements[i];
+                temp[i] = elements[i];
             }
             //改变引用
             elements = temp;
         }
         elements[currentIndex] = data;
-    };
+    }
+
+
 
     //删除一个元素
-    public void delete(int index){
-        if (index < 0 || index > elements.length){
-            System.out.println("删除的下标[" + index +"]不在范围之内");
-        }else{
+    public void delete(int index) {
+        if (index < 0 || index > elements.length) {
+            System.out.println("删除的下标[" + index + "]不在范围之内");
+        } else {
             for (int i = index; i < elements.length - 1; i++) {
                 elements[i] = elements[i + 1];
                 currentIndex--;
-            };
+            }
+
         }
     }
 
 
     //修改一个元素
-    public void set(int index,int data){
-        if (index < 0 || index > elements.length){
-            System.out.println("修改的下标[" + index +"]不在范围之内");
-        }else {
+    public void set(int index, int data) {
+        if (index < 0 || index > elements.length) {
+            System.out.println("修改的下标[" + index + "]不在范围之内");
+        } else {
             elements[index] = data;
         }
 
-    };
+    }
+
+
 
     //用下标查询一个元素
     //返回值 改成引用数据类型Integer,未找到时返回null
     public Integer select(int index) {
-        if (index < 0 || index > elements.length){
-            System.out.println("查询的下标[" + index +"]不在范围之内");
+        if (index < 0 || index > elements.length) {
+            System.out.println("查询的下标[" + index + "]不在范围之内");
             return null;
-        }else {
-           return elements[index];
+        } else {
+            return elements[index];
         }
-    };
+    }
+
+
 
     //返回数组长度
-    public int size(){
-        return currentIndex+1;
-    };
+    public int size() {
+        return currentIndex + 1;
+    }
+
+
 
     //数组转化成字符串
     public String arrayToString() {
-        String result = "[";
+        StringBuilder result = new StringBuilder("[");
         for (int i = 0; i < currentIndex + 1; i++) {
-            result = result + elements[i] + ",";
+            result.append(elements[i]).append(",");
         }
-        return result.substring(0,result.length() - 1) + "]";
+        return result.substring(0, result.length() - 1) + "]";
     }
 
     //冒泡排序
-    public void  sort(){
+    public void sort() {
         for (int i = 0; i < currentIndex + 1; i++) {
             for (int j = 0; j < currentIndex - i; j++) {
-                if (elements[j] > elements[j + 1] ){
+                if (elements[j] > elements[j + 1]) {
                     int temp = elements[j];
                     elements[j] = elements[j + 1];
-                    elements[j + 1] =temp;
+                    elements[j + 1] = temp;
                 }
             }
         }

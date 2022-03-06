@@ -9,11 +9,7 @@ public class SuperArrayTest {
         superArray.sort();
 
 
-
         System.out.println(superArray.arrayToString());
-
-
-
 
 
     }
