@@ -7,11 +7,7 @@ public class SuperArrayTest {
         superArray.add(2);
         superArray.add(1);
         superArray.sort();
-
-
         System.out.println(superArray.arrayToString());
-
-
     }
 
 
