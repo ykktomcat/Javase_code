@@ -20,10 +20,10 @@ public class SuperArray {
 
     //对数据的增删改查
     //增加一个元素,尾插
-    public void add(int data) {
+    public void add(int index ,int data) {
         currentIndex++;
         //以下进行数组扩容
-        if (currentIndex > elements.length - 1) {
+        if (currentIndex > elements.length - 2) {
             int[] temp = new int[elements.length + 1];
             System.arraycopy(elements, 0, temp, 0, elements.length);
 
@@ -33,7 +33,20 @@ public class SuperArray {
             //改变引用
             elements = temp;
         }
-        elements[currentIndex] = data;
+        //移出位置腾出空间
+        for (int i = currentIndex; i >= index ; i--) {
+            elements[i + 1] = elements[i];
+        }
+        elements[index] = data;
+    }
+
+    public void  addToHeader(int data){
+        add(0,data);
+
+    }
+
+    public void  addToTail(int data){
+        add(currentIndex + 1,data);
     }
 
 

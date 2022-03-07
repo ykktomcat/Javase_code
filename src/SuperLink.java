@@ -32,10 +32,8 @@ public class SuperLink {
             } else {
                 //先拉住后面的节点，再让前面的拉上自己。
                 //找到下标为index -1的节点
-                Node node = head;
-                for (int i = 0; i < index - 1; i++) {
-                    node = node.getNext();
-                }
+
+                Node node =selectNode(index -1);
                 //插入的核心
                 Node temp = new Node(data, node.getNext());
                 node.setNext(temp);
@@ -49,13 +47,11 @@ public class SuperLink {
     public void set(int index, int data) {
         //找到要修改的元素位置，自己存储的值改成data
 
-        //找到下标为index的节点
-        Node node = head;
-        for (int i = 0; i < index; i++) {
-            node = node.getNext();
-        }
-        //修改的核心
-        node.setData(data);
+        //找到下标为index的节点并修改
+        selectNode(index).setData(data);
+
+
+
     }
 
     //删除一个元素
@@ -64,11 +60,8 @@ public class SuperLink {
             head = head.getNext();
         } else {
             //定义一个空的放在头部
-            Node node = head;
-            //找到下标为index - 1的节点
-            for (int i = 0; i < index - 1; i++) {
-                node = node.getNext();
-            }
+            Node node = selectNode(index - 1);
+
             //删除的核心
             node.setNext(node.getNext().getNext());
         }
@@ -87,6 +80,17 @@ public class SuperLink {
         return node.getData();
     }
 
+    //抽离出共用的寻找节点node的方法
+    public Node selectNode(int index) {
+        //定义一个空的放在头部
+        Node node = head;
+        //找到下标为index 的节点
+        for (int i = 0; i < index; i++) {
+            node = node.getNext();
+        }
+        return node;
+    }
+
     //链表转成字符串数组
     public String linkToString() {
         StringBuilder result = new StringBuilder("[");
@@ -94,6 +98,57 @@ public class SuperLink {
             result.append(select(i)).append(",");
         }
         return result.substring(0, result.length() - 1) + "]";
+    }
+
+    //链表冒泡排序
+    public void sort(){
+        for (int i = 0; i < currentIndex + 1; i++) {
+            for (int j = 0; j < currentIndex - i; j++) {
+                if (select(j) > select(j + 1) ){
+                    int temp = select(j) ;
+                    selectNode(j).setData(select(j + 1));
+                    selectNode(j + 1).setData(temp);
+                }
+            }
+        }
+    }
+
+
+    //链表冒泡排序优化
+    public void sort2(){
+        for (int i = 0; i < currentIndex + 1; i++) {
+            for (int j = 0; j < currentIndex - i; j++) {
+                //优化
+                Node node = selectNode(j);
+                Node next = node.getNext();
+                if (node.getData() >  next.getData()){
+                    int temp = node.getData() ;
+                    node.setData(next.getData());
+                    next.setData(temp);
+                }
+            }
+        }
+    }
+
+    //链表冒泡排序优化
+    public void sort3(){
+        for (int i = 0; i < currentIndex + 1; i++) {
+            Node node = null;
+            for (int j = 0; j < currentIndex - i; j++) {
+                if(j == 0) {
+                    node = head;
+                }else {
+                    node = node.getNext();
+                }
+                //优化
+                Node next = node.getNext();
+                if (node.getData() >  next.getData()){
+                    int temp = node.getData() ;
+                    node.setData(next.getData());
+                    next.setData(temp);
+                }
+            }
+        }
     }
 
 }
