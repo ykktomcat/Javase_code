@@ -1,3 +1,5 @@
+package com.ykk.homework;
+
 public class SuperArrayTest {
     public static void main(String[] args) {
         SuperArray superArray = new SuperArray(2);

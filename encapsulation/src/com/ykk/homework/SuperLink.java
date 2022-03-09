@@ -1,3 +1,5 @@
+package com.ykk.homework;
+
 //超级链表
 public class SuperLink {
     //链表的头部

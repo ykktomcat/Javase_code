@@ -1,4 +1,4 @@
-import java.util.Scanner;
+package com.ykk.homework;
 
 public class Test {
     public static void main(String[] args) {

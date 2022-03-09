@@ -1,3 +1,5 @@
+package com.ykk.homework;
+
 //封装一个超级数组
 public class SuperArray {
 

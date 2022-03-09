@@ -1,3 +1,5 @@
+package com.ykk.homework;
+
 //封装一个超级链表 node
 public class Node {
 
@@ -32,12 +34,12 @@ public class Node {
 
 
 //    //无参构造
-//    public Node() {
+//    public com.ykk.homework.Node() {
 //
 //    }
 //
 //    //有参构造
-//    public Node(Integer data, Node next) {
+//    public com.ykk.homework.Node(Integer data, com.ykk.homework.Node next) {
 //
 //    }
 //
@@ -49,11 +51,11 @@ public class Node {
 //        this.data = data;
 //    }
 //
-//    public Node getNext() {
+//    public com.ykk.homework.Node getNext() {
 //        return next;
 //    }
 //
-//    public void setNext(Node next) {
+//    public void setNext(com.ykk.homework.Node next) {
 //        this.next = next;
 //    }
 
