@@ -60,9 +60,9 @@ public class SuperArray {
         } else {
             for (int i = index; i < elements.length - 1; i++) {
                 elements[i] = elements[i + 1];
-                currentIndex--;
             }
-
+            //放到循环外
+            currentIndex--;
         }
     }
 
