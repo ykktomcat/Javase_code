@@ -5,4 +5,7 @@ label: P99 9-8  ; time: 2022-03-07 ; title:超级链表优化排序性能比较<
 label: P99 9-9  ; time: 2022-03-07 ; title:超级数组修改优化<br />
 label: P99 9-11 ; time: 2022-03-09 下午; title:基于超级数组实现队列和栈<br />
 label: P99 9-12 ; time: 2022-03-09 下午; title:基于队列的银行取票机小系统<br />
+label: P99 10-6 ; time: 2022-03-10 晚上; title:继承、子类父类的构造顺序、super和this的区别、方法重写、final关键字、权限修饰符protected、friendly(default)<br />
+
+
 
