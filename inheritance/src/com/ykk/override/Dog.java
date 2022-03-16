@@ -1,6 +1,7 @@
 package com.ykk.override;
 
 public class Dog extends  Animal {
+    public String name ="dog";
     @Override
     public void eat() {
         System.out.println("dog is eating");
@@ -14,6 +15,7 @@ public class Dog extends  Animal {
     public static void main(String[] args) {
         Animal animal = new Dog();
         animal.eat("meat");
+        System.out.println(animal.name);
     }
     /**
      * 这个案例里边有重载，也有重写，最终会选择Dog类的(String food)方法，
@@ -26,6 +28,6 @@ public class Dog extends  Animal {
      *
      * 重载(overloading)和重写(overriding)是java多态性的体现，但是由于重载是静态分派的原因，有些博客不认为重载也能体现多态性，这个就见仁见智了。
      *
-     * 多态只和方法有关和属性无关
+     * ***多态只和方法有关和属性无关***
      */
 }
