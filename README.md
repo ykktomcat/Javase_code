@@ -19,5 +19,5 @@ label: P142 13-06 ; time: 2022-03-27 下午; title:静态方法和成员方法�
 label: P143 13-07 ; time: 2022-03-27 下午; title:内部类<br />
 label: P144 13-08 ; time: 2022-03-27 晚上; title:单例设计模式 - 懒汉和饿汉<br />
 label: P145 13-09 ; time: 2022-03-27 晚上; title:静态内部类实现单例<br />
-
+label: P146 13-10 ; time: 2022-03-28 晚上; title:匿名内部类<br />
 
