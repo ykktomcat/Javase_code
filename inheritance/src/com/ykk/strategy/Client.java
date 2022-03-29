@@ -11,7 +11,10 @@ public class Client {
 
         User[] users = {user1,user2,user3,user4};
         UserSorter userSorter = new UserSorter();
-        userSorter.sort(users,new HeightComparator());
+        //userSorter.sort(users,new HeightComparator());
+        //箭头函数
+        userSorter.sort(users,(User a, User b)->(int)(a.getHeight() - b.getHeight()));
+        userSorter.sort(users,(User c, User d)->(c.getAge()- d.getAge()));
         System.out.println(Arrays.toString(users));
     }
 

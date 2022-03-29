@@ -5,6 +5,6 @@ package com.ykk.strategy;
  * 可以 implements 此接口 获得这个接口的能力
  */
 public  interface   Comparator {
-    Integer compare(User user, User user1);
+    Integer compare(User user, User other);
 
 }
